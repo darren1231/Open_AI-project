@@ -3,17 +3,18 @@ import numpy as np
 import time
 import psutil
 
-im = Image.open( "test1.png" )
+im = Image.open( "test.png" )
 array=np.array(im)
 im.show()
-print array.shape
+print 'array.shape:',array.shape
+
 
 for interval in xrange(0,50,10):
 	for i in xrange(interval+0,interval+10,1):
 		for j in xrange(interval+0,interval+10,1):
-			array[i][j][0]=0
-			array[i][j][1]=0
-			array[i][j][2]=0
+			array[i][j][0]=255
+			array[i][j][1]=255
+			array[i][j][2]=255
 
 	pic=Image.fromarray(array)
 	pic.show()
